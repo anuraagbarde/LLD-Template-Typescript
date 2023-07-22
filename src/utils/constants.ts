@@ -11,7 +11,7 @@ export type Outcome = ObjVals<typeof OUTCOME>;
 export const USER_SYMBOL = {
   X: 'X',
   O: 'O',
-};
+} as const;
 export type UserSymbol = ObjVals<typeof USER_SYMBOL>;
 
 export const SYMBOL = {
