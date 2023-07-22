@@ -72,7 +72,7 @@ Coordinate {
 
 ```bash
 npm init -y
-npm i express dotenv typescript @tsconfig/node18 compression  body-parser cors
+npm i express dotenv typescript @tsconfig/node18 compression  body-parser cors module-alias
 npm i -D typescript @types/express @types/node @types/compression @types/cors concurrently nodemon
 npx tsc --init
 ```
