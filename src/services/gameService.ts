@@ -42,8 +42,8 @@ function generateUserIdVsAssignedSymbol(playingUsers: Array<PlayingUser>): Recor
 
 function generatePlayingUsers(userIds: Array<string>): Array<PlayingUser> {
   return [
-    new PlayingUser(randomUUID(), 'genericUserName1', USER_SYMBOL.X),
-    new PlayingUser(randomUUID(), 'genericUserName2', USER_SYMBOL.O),
+    new PlayingUser(userIds[0], 'genericUserName1', USER_SYMBOL.X),
+    new PlayingUser(userIds[1], 'genericUserName2', USER_SYMBOL.O),
   ];
 }
 
