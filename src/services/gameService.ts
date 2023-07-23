@@ -7,7 +7,7 @@ import * as BoardService from '@services/boardService';
 const BOARD_SIZE = 3;
 
 interface createResponse {
-  id: string;
+  gameId: string;
   boardState: Array<Array<Symbol>>;
   userIdVsAssignedSymbol: Record<string, UserSymbol>;
 }
@@ -27,7 +27,7 @@ export function create(input: { userIds: Array<string> }): createResponse {
   //GameRepository.save(newGame);
 
   return {
-    id: newGame.id,
+    gameId: newGame.id,
     boardState: newGame.board.state,
     userIdVsAssignedSymbol: generateUserIdVsAssignedSymbol(playingUsers),
   };
