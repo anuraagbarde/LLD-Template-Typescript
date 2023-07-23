@@ -1,4 +1,3 @@
-// import { PlayingUser } from '../Actors/User';
 import { PlayingUser } from '@models/Actors/User';
 
 export class Move {

@@ -5,10 +5,10 @@ import { Coordinate, Move } from '@models/Board/Move';
 
 class Game {
   id: string;
-  nextPlayerMoveIndex: number; //or just PlayingUser.Id?
+  nextPlayerMoveIndex: number;
   outcome: Outcome;
   board: Board;
-  playingUsers: Array<PlayingUser>;
+  playingUsers: Array<PlayingUser>; //size 2
   moveHistory: Array<Move>;
 
   constructor(players: Array<PlayingUser>, BoardSize: number) {
@@ -31,7 +31,7 @@ class Game {
     const move = new Move(player, x, y);
     this.validateMove(move);
     this.moveHistory.push(move); //side effect
-    this.board.updateBoard(move); //side effect
+    this.board = this.board.createUpdatedBoard(move); //side effect
     //check and update outcome
   }
 

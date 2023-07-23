@@ -9,12 +9,8 @@ class User {
   }
 }
 
-class PlayingUserMeta {
+interface PlayingUserMeta {
   assignedSymbol: UserSymbol;
-
-  constructor(assignedSymbol: UserSymbol) {
-    this.assignedSymbol = assignedSymbol;
-  }
 }
 
 type PlayingUserInterface = User & PlayingUserMeta;

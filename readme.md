@@ -6,18 +6,19 @@
 2. Should be playable by 2 users
 3. Should be able to play a valid move
 4. Should be able to restart the game
-5. Should be able to undo the previous move by a user
-6. Should be able to tell if the game is over and the winner
+5. Should be able to tell if the game is over and the winner
+6. Should be able to undo the previous move by a user
+
+7. Keep count of user wins -> can be optional
 
 ## Non functional requirements
 
-1. Keep count of user wins
-2. Leaderboard
-3. Comments
-4. Analytics
-5. User guide on next move / Game analysis
-6. Multiple viewership?
-7. Multiple players?
+1. Leaderboard
+2. Comments
+3. Analytics
+4. User guide on next move / Game analysis
+5. Multiple viewership?
+6. Multiple players?
 
 ## Bottom up approach
 
@@ -33,9 +34,9 @@
 
 Game {
     id
-    nextPlayerMove: userId
-    outcome
-    boardId
+    nextPlayerMoveIndex: User
+    OUTCOME
+    Board
     Array<PlayingUser>
     Array<Move>
 }
@@ -58,7 +59,7 @@ PlayingUserMeta {
 PlayingUser = User & PlayingUserMeta;
 
 Move {
-    userId implements playing,
+    PlayingUser,
     location: Coordinate,
 }
 
@@ -75,4 +76,66 @@ npm init -y
 npm i express dotenv typescript @tsconfig/node18 compression  body-parser cors module-alias
 npm i -D typescript @types/express @types/node @types/compression @types/cors concurrently nodemon
 npx tsc --init
+```
+
+1. Should show the current state of the game
+2. Should be playable by 2 users
+3. Should be able to play a valid move
+4. Should be able to restart the game
+5. Should be able to tell if the game is over and the winner
+6. Should be able to undo the previous move by a user
+
+7. Keep count of user wins -> can be optional
+
+## API CONTRACT
+
+METHOD ROUTE REQBODY RESBODY
+
+```typescript
+//get the current state of the board
+GET /game/:id {
+    userIds: Array<string>
+    } {
+    boardState: Array<Array<SYMBOL>>
+    Map<userId: AssignedSymbol>
+    outcome: OUTCOME
+}
+
+//create a new game
+POST /game {} {
+id: string
+boardState: Array<Array<SYMBOL>>
+Map<userId: AssignedSymbol>
+}
+
+//make a move
+POST /game/:id/move {
+userId: string,
+moveType: MOVE_TYPE.ADD | MOVE_TYPE.UNDO
+movePayload: {
+    location: Coordinate
+} | null
+}{
+boardState: Array<Array<SYMBOL>>
+outcome: OUTCOME
+}
+
+//restart the game
+PUT game/:id/restart {
+    userId: string,
+} {
+    boardState: Array<Array<SYMBOL>>
+    Map<userId: AssignedSymbol>
+    outcome: OUTCOME
+}
+
+//undo the previous move by a paritcular user
+POST /game/:id/undo {
+    userId: string,
+} {
+    boardState: Array<Array<SYMBOL>>
+    Map<userId: AssignedSymbol>
+    outcome: OUTCOME
+}
+
 ```
