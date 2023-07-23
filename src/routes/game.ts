@@ -1,10 +1,16 @@
 import express from 'express';
 const router = express.Router();
 
-router.get('/:id', (req, res) => {
+import * as GameService from '@services/gameService';
+
+router.post('/create', (req, res) => {
   res.status(200);
+  const input: {
+    userIds: Array<string>;
+  } = req.body;
+
   res.json({
-    id: req.params.id,
+    // id: req.params.id,
   });
   return res;
 });

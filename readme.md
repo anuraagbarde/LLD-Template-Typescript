@@ -102,7 +102,9 @@ GET /game/:id {
 }
 
 //create a new game
-POST /game {} {
+POST /game {
+    userIds: Array<string>
+} {
 id: string
 boardState: Array<Array<SYMBOL>>
 Map<userId: AssignedSymbol>
