@@ -6,7 +6,8 @@
       "@models/*": ["models/*"],
       "@services/*": ["services/*"],
       "@routes/*": ["routes/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@repo/*": ["repo/*"]
     },
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Projects */

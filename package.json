@@ -13,7 +13,8 @@
     "@models": "dist/src/models",
     "@services": "dist/src/services",
     "@routes": "dist/src/routes",
-    "@utils": "dist/src/utils"
+    "@utils": "dist/src/utils",
+    "@repo": "dist/src/repo"
   },
   "keywords": [],
   "author": "",

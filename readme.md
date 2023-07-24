@@ -1,6 +1,8 @@
 # Design Tic Tac Toe
 
-## Functional requirements
+## Requirements
+
+### Functional requirements
 
 1. Should show the current state of the game
 2. Should be playable by 2 users
@@ -11,7 +13,7 @@
 
 7. Keep count of user wins -> can be optional
 
-## Non functional requirements
+### Non functional requirements
 
 1. Leaderboard
 2. Comments
@@ -78,27 +80,28 @@ npm i -D typescript @types/express @types/node @types/compression @types/cors co
 npx tsc --init
 ```
 
-1. Should show the current state of the game
-2. Should be playable by 2 users
-3. Should be able to play a valid move
-4. Should be able to restart the game
-5. Should be able to tell if the game is over and the winner
-6. Should be able to undo the previous move by a user
-
-7. Keep count of user wins -> can be optional
-
 ## API CONTRACT
 
-METHOD ROUTE REQBODY RESBODY
+### METHOD ROUTE REQBODY RESBODY
 
 ```typescript
-//get the current state of the board
-GET /game/:id {
+//get the current state of the game
+GET /game/:id/ {
     userIds: Array<string>
     } {
-    boardState: Array<Array<SYMBOL>>
-    Map<userId: AssignedSymbol>
-    outcome: OUTCOME
+    Game: {
+        id: string;
+        nextPlayerMoveIndex: number;
+        outcome: Outcome;
+        board: Board: {
+            id: string;
+            state: Array<Array<Symbol>>;
+            size: number;
+        };
+        playingUsers: Array<PlayingUser>; //size 2
+        moveHistory: Array<Move>;
+        winningPlayer: null | PlayingUser;
+    }
 }
 
 //create a new game
