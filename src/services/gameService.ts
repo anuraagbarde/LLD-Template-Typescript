@@ -16,6 +16,7 @@ type createResponse = {
 
 export function create(input: { userIds: Array<string> }): createResponse {
   const playingUsers = generatePlayingUsers(input.userIds);
+  //GameRepo.create()
   const newGame = new Game({
     id: '1', // randomUUID(),
     playingUsers: playingUsers,

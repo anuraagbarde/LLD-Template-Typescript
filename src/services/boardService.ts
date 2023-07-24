@@ -9,6 +9,8 @@ import { randomUUID } from 'crypto';
 export function create(size: number): Board {
   const id = randomUUID(); //generate this from db; uuid
   const state = generateState(size);
+
+  //BoardRepo.create(id, size, state);
   const board = new Board(id, size, state);
   return board;
 }
