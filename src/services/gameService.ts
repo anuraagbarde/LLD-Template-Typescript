@@ -57,7 +57,7 @@ export function move({ gameId, userId, x, y }: moveParams): Outcome {
   currGame.outcome = BoardService.checkOutcome(currGame.board) ?? OUTCOME.PROGRESS;
 
   if (currGame.outcome === OUTCOME.WON) {
-    //currGame.Id should go rather than the whole object
+    //winningPlayer.id should go rather than the whole object
     currGame.winningPlayer = currGame.playingUsers[currGame.nextPlayerMoveIndex];
   }
 
