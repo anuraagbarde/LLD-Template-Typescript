@@ -1,7 +1,6 @@
 import { PlayingUser } from '@models/Actors/User';
 import { Game } from '@models/Game';
 import { OUTCOME, Outcome, USER_SYMBOL, UserSymbol, Symbol } from '@utils/constants';
-import { randomUUID } from 'crypto';
 import * as BoardService from '@services/boardService';
 import * as GameRepo from '@repo/Game';
 import { BadRequestError } from '@utils/error';

@@ -1,7 +1,7 @@
 import { PlayingUser } from '@models/Actors/User';
 import { Board } from '@models/Board/Board';
 import { Move } from '@models/Board/Move';
-import { OUTCOME, Outcome, SYMBOL, Symbol, UserSymbol } from '@utils/constants';
+import { OUTCOME, SYMBOL, Symbol } from '@utils/constants';
 import * as BoardRepo from '@repo/Board/Board';
 import { BadRequestError } from '@utils/error';
 import { randomUUID } from 'crypto';
