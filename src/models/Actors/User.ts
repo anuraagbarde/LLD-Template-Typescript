@@ -1,4 +1,4 @@
-import { UserSymbol } from '../../utils/constants';
+import { UserSymbol } from '../../utils/constants.js';
 class User {
   id: string;
   name: string;

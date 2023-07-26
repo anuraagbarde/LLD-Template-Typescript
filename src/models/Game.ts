@@ -1,7 +1,7 @@
-import { PlayingUser } from '@models/Actors/User';
-import { OUTCOME, Outcome } from '@utils/constants';
-import { Board } from '@models/Board/Board';
-import { Coordinate, Move } from '@models/Board/Move';
+import { PlayingUser } from './Actors/User.js';
+import { OUTCOME, Outcome } from '../utils/constants.js';
+import { Board } from './Board/Board.js';
+import { Coordinate, Move } from './Board/Move.js';
 
 export class Game {
   id: string;

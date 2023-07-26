@@ -1,4 +1,4 @@
-import { PlayingUser } from '@models/Actors/User';
+import { PlayingUser } from '../Actors/User.js';
 
 export class Move {
   user: PlayingUser;

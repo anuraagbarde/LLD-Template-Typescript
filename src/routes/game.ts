@@ -1,8 +1,8 @@
 import express from 'express';
 const router = express.Router();
 
-import * as GameService from '@services/gameService';
-import { BadRequestError } from '@utils/error';
+import GameService from '../services/gameService.js';
+import { BadRequestError } from '../utils/error.js';
 
 const tryCatchWrapper = (fn: (req: express.Request, res: express.Response) => express.Response) => {
   return (req: express.Request, res: express.Response) => {
@@ -23,6 +23,7 @@ router.post(
   tryCatchWrapper((req, res) => {
     const input: { userIds: Array<string> } = req.body;
     const response = GameService.create(input);
+
     res.status(200).json(response);
     return res;
   })

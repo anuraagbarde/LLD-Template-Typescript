@@ -1,6 +1,6 @@
-import { Game } from '@models/Game';
-import * as BoardRepo from '@repo/Board/Board';
-import { PartialBy } from '@utils/type';
+import { Game } from '../models/Game.js';
+import * as BoardRepo from '../repo/Board/Board.js';
+import { PartialBy } from '../utils//type.js';
 import { randomUUID } from 'crypto';
 interface boardId {
   boardId: string;

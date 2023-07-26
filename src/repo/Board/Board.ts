@@ -1,4 +1,4 @@
-import { Board } from '@models/Board/Board';
+import { Board } from '../../models/Board/Board.js';
 import { randomUUID } from 'crypto';
 
 const BOARD_TABLE = new Map<string, Board>();

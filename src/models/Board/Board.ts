@@ -1,4 +1,4 @@
-import { Symbol } from '@utils/constants';
+import { Symbol } from '../../utils/constants.js';
 
 export class Board {
   id: string;

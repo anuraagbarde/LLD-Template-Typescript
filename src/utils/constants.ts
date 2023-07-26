@@ -1,4 +1,4 @@
-import { ObjKey, ObjVals } from './type';
+import { ObjKey, ObjVals } from './type.js';
 
 export const OUTCOME = {
   READY: 'READY',
