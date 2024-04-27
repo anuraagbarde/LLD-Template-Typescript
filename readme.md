@@ -1,3 +1,5 @@
+The game is actually designed in this template. For a more abstract template you can use https://github.com/anuraagbarde/lld-typescript-template/tree/master
+
 # Design Tic Tac Toe
 
 ## Requirements
